@@ -1,0 +1,80 @@
+[2021-09-30 19:25:08,731] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.copy_from_hdfs 2021-09-28T01:01:00+00:00 [queued]>
+[2021-09-30 19:25:08,781] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.copy_from_hdfs 2021-09-28T01:01:00+00:00 [queued]>
+[2021-09-30 19:25:08,781] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:25:08,781] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2021-09-30 19:25:08,781] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:25:08,802] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): copy_from_hdfs> on 2021-09-28T01:01:00+00:00
+[2021-09-30 19:25:08,806] {standard_task_runner.py:52} INFO - Started process 1707794 to run task
+[2021-09-30 19:25:08,810] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'etl_dag', 'copy_from_hdfs', '2021-09-28T01:01:00+00:00', '--job-id', '431', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpm_eud15f', '--error-file', '/tmp/tmptxhlblx3']
+[2021-09-30 19:25:08,810] {standard_task_runner.py:77} INFO - Job 431: Subtask copy_from_hdfs
+[2021-09-30 19:25:08,923] {logging_mixin.py:104} INFO - Running <TaskInstance: etl_dag.copy_from_hdfs 2021-09-28T01:01:00+00:00 [running]> on host kseniya-B85M-D3V
+[2021-09-30 19:25:09,030] {taskinstance.py:1300} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=etl_dag
+AIRFLOW_CTX_TASK_ID=copy_from_hdfs
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-28T01:01:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-09-28T01:01:00+00:00
+[2021-09-30 19:25:13,860] {local_task_job.py:197} WARNING - State of this instance has been externally set to removed. Terminating instance.
+[2021-09-30 19:25:13,870] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 1707794
+[2021-09-30 19:25:13,871] {taskinstance.py:1284} ERROR - Received SIGTERM. Terminating subprocesses.
+[2021-09-30 19:25:13,871] {java_gateway.py:1210} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1286, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2021-09-30 19:25:13,872] {java_gateway.py:1050} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1286, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[2021-09-30 19:25:13,873] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/kseniya/airflow/dags/scripts/hdfs_task.py", line 3, in hdfs_task
+    sparkSession = SparkSession.builder.appName("example-pyspark-read-and-write").getOrCreate()
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/sql/session.py", line 228, in getOrCreate
+    sc = SparkContext.getOrCreate(sparkConf)
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/context.py", line 384, in getOrCreate
+    SparkContext(conf=conf or SparkConf())
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/context.py", line 146, in __init__
+    self._do_init(master, appName, sparkHome, pyFiles, environment, batchSize, serializer,
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/context.py", line 209, in _do_init
+    self._jsc = jsc or self._initialize_context(self._conf._jconf)
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/context.py", line 321, in _initialize_context
+    return self._jvm.JavaSparkContext(jconf)
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1568, in __call__
+    return_value = get_return_value(
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling None.org.apache.spark.api.java.JavaSparkContext
+[2021-09-30 19:25:13,874] {taskinstance.py:1544} INFO - Marking task as FAILED. dag_id=etl_dag, task_id=copy_from_hdfs, execution_date=20210928T010100, start_date=20210930T162508, end_date=20210930T162513
+[2021-09-30 19:25:13,965] {process_utils.py:66} INFO - Process psutil.Process(pid=1707794, status='terminated', exitcode=1, started='19:25:08') (1707794) terminated with exit code 1
+[2021-09-30 19:25:14,384] {process_utils.py:66} INFO - Process psutil.Process(pid=1707822, status='terminated', started='19:25:08') (1707822) terminated with exit code None

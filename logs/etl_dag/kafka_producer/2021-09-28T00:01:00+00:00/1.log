@@ -1,0 +1,23 @@
+[2021-09-30 19:25:08,616] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.kafka_producer 2021-09-28T00:01:00+00:00 [queued]>
+[2021-09-30 19:25:08,660] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.kafka_producer 2021-09-28T00:01:00+00:00 [queued]>
+[2021-09-30 19:25:08,661] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:25:08,661] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2021-09-30 19:25:08,661] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:25:08,676] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): kafka_producer> on 2021-09-28T00:01:00+00:00
+[2021-09-30 19:25:08,679] {standard_task_runner.py:52} INFO - Started process 1707784 to run task
+[2021-09-30 19:25:08,683] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'etl_dag', 'kafka_producer', '2021-09-28T00:01:00+00:00', '--job-id', '430', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp4cz3be4i', '--error-file', '/tmp/tmp6jv86o5u']
+[2021-09-30 19:25:08,683] {standard_task_runner.py:77} INFO - Job 430: Subtask kafka_producer
+[2021-09-30 19:25:08,756] {logging_mixin.py:104} INFO - Running <TaskInstance: etl_dag.kafka_producer 2021-09-28T00:01:00+00:00 [running]> on host kseniya-B85M-D3V
+[2021-09-30 19:25:08,862] {taskinstance.py:1300} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=etl_dag
+AIRFLOW_CTX_TASK_ID=kafka_producer
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-28T00:01:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-09-28T00:01:00+00:00
+[2021-09-30 19:25:08,862] {pass_op.py:3} INFO - pass_op
+[2021-09-30 19:25:08,862] {python.py:151} INFO - Done. Returned value was: None
+[2021-09-30 19:25:08,903] {taskinstance.py:1204} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=kafka_producer, execution_date=20210928T000100, start_date=20210930T162508, end_date=20210930T162508
+[2021-09-30 19:25:09,168] {taskinstance.py:1265} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-09-30 19:25:09,179] {local_task_job.py:149} INFO - Task exited with return code 0

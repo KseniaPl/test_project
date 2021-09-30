@@ -1,0 +1,165 @@
+[2021-09-30 19:26:04,963] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.run_hive 2021-09-28T00:01:00+00:00 [queued]>
+[2021-09-30 19:26:05,043] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.run_hive 2021-09-28T00:01:00+00:00 [queued]>
+[2021-09-30 19:26:05,043] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:26:05,044] {taskinstance.py:1088} INFO - Starting attempt 1 of 1
+[2021-09-30 19:26:05,044] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:26:05,070] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): run_hive> on 2021-09-28T00:01:00+00:00
+[2021-09-30 19:26:05,074] {standard_task_runner.py:52} INFO - Started process 1710640 to run task
+[2021-09-30 19:26:05,081] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'etl_dag', 'run_hive', '2021-09-28T00:01:00+00:00', '--job-id', '436', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmpo1b9v33c', '--error-file', '/tmp/tmptf0m1aar']
+[2021-09-30 19:26:05,082] {standard_task_runner.py:77} INFO - Job 436: Subtask run_hive
+[2021-09-30 19:26:05,153] {logging_mixin.py:104} INFO - Running <TaskInstance: etl_dag.run_hive 2021-09-28T00:01:00+00:00 [running]> on host kseniya-B85M-D3V
+[2021-09-30 19:26:05,251] {taskinstance.py:1300} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=etl_dag
+AIRFLOW_CTX_TASK_ID=run_hive
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-28T00:01:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-09-28T00:01:00+00:00
+[2021-09-30 19:26:05,252] {hive_task.py:8} INFO - hive task started
+[2021-09-30 19:26:11,924] {hive_task.py:15} INFO - before sql
+[2021-09-30 19:26:23,857] {hive_task.py:21} INFO - before load
+[2021-09-30 19:26:25,645] {hive_task.py:24} INFO - after load
+[2021-09-30 19:26:29,729] {logging_mixin.py:104} INFO - +--------+------+---------------+--------------------+---------+--------------------+----------+----------+----------+--------------------+-----------+---------+------+--------+-------------------+----+-----------+--------------------+---------+---------+--------+
+|      id|region|           city|                name| employer|               title|createdAtD|createdAtM|createdAtY|                spec|salary_from|salary_to|   exp|currency|          skillsstr|mode|   schedule|         description|      lat|     long|category|
++--------+------+---------------+--------------------+---------+--------------------+----------+----------+----------+--------------------+-----------+---------+------+--------+-------------------+----+-----------+--------------------+---------+---------+--------+
+|    null|region|           city|                name| employer|               title|      null|      null|      null|                spec|       null|     null|   exp|currency|          skillsstr|mode|   schedule|         description|      lat|     long|category|
+|42642250|    nn|               |                РЭДИ| 577825.0|   Программист C/С++|        26|         5|      2021|Передача данных и...|          0|        0|intern|        |   arm:c#:c#:python|full|    fullDay|<p><strong>Уважае...|         |         |     lib|
+|43562672|    nn|Нижний Новгород|            МФИ Софт|  12878.0|Старший инженер-п...|        20|         5|      2021|Программирование....|          0|        0|senior|        |          c++:linux|full|   flexible|<p><strong>МФИ Со...| 56.29008|43.985532|     lib|
+|44461719|    nn|               |          ЭР-Телеком|  44272.0|Руководитель прое...|        11|         5|      2021|Управление проект...|          0|        0|junior|        |                sap|full|    fullDay|<p><strong>Функци...|         |         |  manage|
+|44498002|    nn|               |Железов Артем Сер...|4642647.0|Cloud Engineering...|        11|         5|      2021|Компьютерная безо...|     250000|   500000|middle|     RUR|architect:aws:cloud|full|     remote|<p><strong>Привет...|         |         |     dsa|
+|44743340|    nn|      Дзержинск|          Ростелеком|   2748.0|Техник по подключ...|        20|         5|      2021|Сервисный инженер...|      30000|        0|intern|     RUR|                   |full|    fullDay|<p><strong>Ростел...|56.249061| 43.46123| service|
+|42543706|    nn|               |          Devexperts|  52729.0|Специалист технич...|        28|         5|      2021| Поддержка. Helpdesk|          0|        0|junior|        |            fintech|full|     remote|<p><strong>Мы</st...|         |         |    help|
+|41763740|    nn|               |       Смарт-Контакт|1813879.0|    Java-разработчик|        18|         5|      2021|Программирование....|          0|        0|senior|        |        java:spring|full|     remote|<p>На текущий мом...|         |         |      ee|
+|44183188|    nn|               |         Союзрешение|4652608.0|Программист-разра...|        26|         4|      2021|Программирование....|      84000|   117600|middle|     RUR|                 1c|part|     remote|<p>Мы. компания С...|         |         |  integr|
+|44330398|    nn|               |              Skyeng|1122462.0|      Куратор Skypro|        30|         4|      2021| Поддержка. Helpdesk|      30000|    50000|junior|     RUR|                   |full|     remote|<p>В команду <str...|         |         |     out|
+|44951418|    nn|Нижний Новгород|               НИТЭК| 735972.0|Младший программи...|        27|         5|      2021|Начальный уровень...|      30000|        0|junior|     RUR|                 1c|full|    fullDay|<strong>Обязаннос...|56.344895|43.898269|  integr|
+|44974710|    nn|               |      Антигравитация|2639962.0|Менеджер по прода...|        28|         5|      2021|Начальный уровень...|      45000|        0|junior|     RUR|                crm|full|     remote|<p>Ищем <strong>М...|         |         |   sales|
+|43276255|    nn|Нижний Новгород|         КТБ Эксперт|5206622.0|Руководитель груп...|        27|         5|      2021|Языки:Письменный ...|          0|        0|junior|        |                   |full|    fullDay|<strong>Обязаннос...|56.244955|43.972425|     out|
+|43512112|    nn|               |      ЛинкТелеком НН|1146834.0|Системный админис...|        31|         5|      2021|Сетевые технологи...|      60000|        0|middle|     RUR|               voip|full|    fullDay|<strong>Обязаннос...|         |         |   admin|
+|44908482|    nn|               |      МетМашКомплект|5156170.0|Оператор обрабаты...|        26|         5|      2021|Машиностроение:Ин...|          0|    94000|junior|     RUR|                   |full|flyInFlyOut|<p>На крупное маш...|         |         |engineer|
+|42632487|    nn|               |          Доктор Веб|   8884.0|Региональный мене...|        31|         5|      2021|Компьютерные прог...|      40000|        0|junior|     RUR|                   |full|    fullDay|<strong>Обязаннос...|         |         |   sales|
+|43761055|    nn|Нижний Новгород|РОСБАНК. Societe ...|    599.0|       Разработчик C|        25|         5|      2021|Программирование....|          0|        0|junior|        |                  c|full|    fullDay|<strong>Обязаннос...|56.307302|44.079855|   multi|
+|39731593|    nn|Нижний Новгород|             Biglion| 656481.0|Менеджер по разви...|        27|         5|      2021|Услуги для бизнес...|      50000|        0|intern|     RUR|                   |full|    fullDay|<p><br /><br /><s...|56.311331|44.030088|   sales|
+|40893554|    nn|     село Усады|        ICL Services| 156424.0|Системный админис...|        12|         5|      2021|Системный админис...|          0|        0|junior|        |          c:windows|full|     remote|<p><em>В команду ...|55.673087|49.213826|   admin|
+|44389738|    nn|Нижний Новгород|                 МТС|   3776.0|Специалист технич...|        11|         5|      2021|Информационные те...|          0|        0|intern|        |                   |full|      shift|<p><strong>МТС – ...|56.293956|44.023728|    help|
++--------+------+---------------+--------------------+---------+--------------------+----------+----------+----------+--------------------+-----------+---------+------+--------+-------------------+----+-----------+--------------------+---------+---------+--------+
+only showing top 20 rows
+[2021-09-30 19:26:29,730] {logging_mixin.py:104} INFO - 
+[2021-09-30 19:26:36,405] {logging_mixin.py:104} INFO - +---------+---------------+
+| category|count(category)|
++---------+---------------+
+|     null|              0|
+|    admin|          12954|
+|   analit|           3859|
+|      arh|            697|
+| category|             17|
+|       db|           1615|
+|   design|           2465|
+|   devops|           2907|
+|  digital|           5763|
+|      dsa|           7072|
+|       ee|           4794|
+| engineer|          15623|
+|hb_manage|           2210|
+|     help|           5525|
+|   help_1|           4675|
+|   help_2|             34|
+|   integr|          12410|
+|      lib|           2176|
+|   manage|           3434|
+|   mobile|           4335|
++---------+---------------+
+only showing top 20 rows
+[2021-09-30 19:26:36,408] {logging_mixin.py:104} INFO - 
+[2021-09-30 19:26:40,692] {logging_mixin.py:104} INFO - +------+----------+
+|   exp|count(exp)|
++------+----------+
+|intern|      1105|
+|junior|      8534|
+|middle|      7089|
+|senior|      2074|
++------+----------+
+[2021-09-30 19:26:40,692] {logging_mixin.py:104} INFO - 
+[2021-09-30 19:26:46,449] {logging_mixin.py:104} INFO - +--------------------+-----------+
+|                name|count(name)|
++--------------------+-----------+
+|              Яндекс|       6426|
+|                 МТС|       3706|
+|              Билайн|       3264|
+|Центр разработки ...|       2550|
+|          Ростелеком|       2142|
+|Netcracker Techno...|       2108|
+|   Intel Corporation|       1411|
+|Кадровое агентств...|       1343|
+|               ЛАНИТ|       1292|
+|              Auriga|       1275|
+|            Гринатом|       1207|
+|            Сбербанк|       1173|
+|        IT_Selection|       1173|
+|                 ГАЗ|       1156|
+|              Skyeng|       1156|
+|                 IBS|       1071|
+|          ЭР-Телеком|       1003|
+|             МегаФон|        935|
+|Positive Technolo...|        901|
+|                 ЛАД|        867|
++--------------------+-----------+
+only showing top 20 rows
+[2021-09-30 19:26:46,449] {logging_mixin.py:104} INFO - 
+[2021-09-30 19:26:50,803] {local_task_job.py:197} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2021-09-30 19:26:50,844] {process_utils.py:100} INFO - Sending Signals.SIGTERM to GPID 1710640
+[2021-09-30 19:26:50,844] {taskinstance.py:1284} ERROR - Received SIGTERM. Terminating subprocesses.
+[2021-09-30 19:26:50,844] {java_gateway.py:1210} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1286, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2021-09-30 19:26:50,846] {java_gateway.py:1050} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1200, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/lib/python3.8/socket.py", line 669, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1286, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1033, in send_command
+    response = connection.send_command(command)
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1211, in send_command
+    raise Py4JNetworkError(
+py4j.protocol.Py4JNetworkError: Error while receiving
+[2021-09-30 19:26:50,846] {taskinstance.py:1501} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1157, in _run_raw_task
+    self._prepare_and_execute_task_with_callbacks(context, task)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1331, in _prepare_and_execute_task_with_callbacks
+    result = self._execute_task(context, task_copy)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/models/taskinstance.py", line 1361, in _execute_task
+    result = task_copy.execute(context=context)
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/python.py", line 150, in execute
+    return_value = self.execute_callable()
+  File "/usr/local/lib/python3.8/dist-packages/airflow/operators/python.py", line 161, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/kseniya/airflow/dags/scripts/hive_task.py", line 29, in hive_task
+    spark.sql("SELECT percentile(salary_to, 0.25) ,percentile(salary_to, 0.5), \
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/sql/dataframe.py", line 484, in show
+    print(self._jdf.showString(n, 20, vertical))
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/home/kseniya/.local/lib/python3.8/site-packages/pyspark/sql/utils.py", line 111, in deco
+    return f(*a, **kw)
+  File "/home/kseniya/.local/lib/python3.8/site-packages/py4j/protocol.py", line 334, in get_return_value
+    raise Py4JError(
+py4j.protocol.Py4JError: An error occurred while calling o33.showString
+[2021-09-30 19:26:50,849] {taskinstance.py:1544} INFO - Marking task as FAILED. dag_id=etl_dag, task_id=run_hive, execution_date=20210928T000100, start_date=20210930T162604, end_date=20210930T162650
+[2021-09-30 19:26:51,345] {process_utils.py:66} INFO - Process psutil.Process(pid=1710640, status='terminated', exitcode=1, started='19:26:05') (1710640) terminated with exit code 1
+[2021-09-30 19:26:51,919] {process_utils.py:66} INFO - Process psutil.Process(pid=1710652, status='terminated', started='19:26:05') (1710652) terminated with exit code None

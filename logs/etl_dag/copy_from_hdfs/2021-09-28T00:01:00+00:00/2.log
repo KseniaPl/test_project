@@ -1,0 +1,22 @@
+[2021-09-30 19:25:41,095] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.copy_from_hdfs 2021-09-28T00:01:00+00:00 [queued]>
+[2021-09-30 19:25:41,130] {taskinstance.py:896} INFO - Dependencies all met for <TaskInstance: etl_dag.copy_from_hdfs 2021-09-28T00:01:00+00:00 [queued]>
+[2021-09-30 19:25:41,130] {taskinstance.py:1087} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:25:41,130] {taskinstance.py:1088} INFO - Starting attempt 2 of 1
+[2021-09-30 19:25:41,130] {taskinstance.py:1089} INFO - 
+--------------------------------------------------------------------------------
+[2021-09-30 19:25:41,144] {taskinstance.py:1107} INFO - Executing <Task(PythonOperator): copy_from_hdfs> on 2021-09-28T00:01:00+00:00
+[2021-09-30 19:25:41,148] {standard_task_runner.py:52} INFO - Started process 1709429 to run task
+[2021-09-30 19:25:41,152] {standard_task_runner.py:76} INFO - Running: ['airflow', 'tasks', 'run', 'etl_dag', 'copy_from_hdfs', '2021-09-28T00:01:00+00:00', '--job-id', '433', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/etl_dag.py', '--cfg-path', '/tmp/tmp2rh9b8mw', '--error-file', '/tmp/tmpfthe7xem']
+[2021-09-30 19:25:41,153] {standard_task_runner.py:77} INFO - Job 433: Subtask copy_from_hdfs
+[2021-09-30 19:25:41,212] {logging_mixin.py:104} INFO - Running <TaskInstance: etl_dag.copy_from_hdfs 2021-09-28T00:01:00+00:00 [running]> on host kseniya-B85M-D3V
+[2021-09-30 19:25:41,363] {taskinstance.py:1300} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=etl_dag
+AIRFLOW_CTX_TASK_ID=copy_from_hdfs
+AIRFLOW_CTX_EXECUTION_DATE=2021-09-28T00:01:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-09-28T00:01:00+00:00
+[2021-09-30 19:25:59,205] {python.py:151} INFO - Done. Returned value was: None
+[2021-09-30 19:25:59,272] {taskinstance.py:1204} INFO - Marking task as SUCCESS. dag_id=etl_dag, task_id=copy_from_hdfs, execution_date=20210928T000100, start_date=20210930T162541, end_date=20210930T162559
+[2021-09-30 19:25:59,319] {taskinstance.py:1265} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2021-09-30 19:25:59,353] {local_task_job.py:149} INFO - Task exited with return code 0
